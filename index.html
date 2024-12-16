@@ -1,28 +1,164 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人网站</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人介绍</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        /* 全局设置 */
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: #fff;
             text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
+            overflow-x: hidden;
         }
-        h1 {
-            color: #333;
+
+        /* 页面容器 */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
         }
-        p {
-            color: #555;
+
+        /* 标题 */
+        h1, h2, h3 {
+            font-weight: 500;
+            margin: 20px 0;
+            color: #e0e0e0;
+            letter-spacing: 1.5px;
+        }
+
+        /* 动态效果 */
+        .fade-in {
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* 广告信息 */
+        .ads {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 30px 0;
+            padding: 30px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .ads ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .ads ul li {
+            font-size: 1.2em;
+            margin: 15px 0;
+        }
+
+        .ads ul li::before {
+            content: "✔️";
+            margin-right: 10px;
+            color: #4CAF50;
+        }
+
+        /* 联系方式 */
+        .contact {
+            margin-top: 50px;
+        }
+
+        .contact h3 {
+            color: #ff9800;
+            font-size: 1.5em;
+        }
+
+        .contact p {
+            font-size: 1.1em;
+            color: #dcdcdc;
+        }
+
+        .contact .qr-code {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .qr-code img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin: 0 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .qr-code img:hover {
+            transform: scale(1.1);
+        }
+
+        /* 动画 */
+        .button {
+            background-color: #ff5722;
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #e64a19;
         }
     </style>
 </head>
 <body>
-    <h1>欢迎来到我的个人网站！</h1>
-    <p>这是使用 GitHub Pages 构建的一个简单页面。</p>
-    <p><a href="https://github.com/username">访问我的 GitHub 主页</a></p>
+
+    <div class="container fade-in">
+        <h1>欢迎来到我的个人网站</h1>
+        <h2>我是一个开发者，致力于为您提供最好的技术服务！</h2>
+
+        <div class="ads fade-in">
+            <h3>我可以为您提供以下服务：</h3>
+            <ul>
+                <li>承接各类APP定制开发</li>
+                <li>承接各类网站定制开发</li>
+                <li>承接各类微信小程序定制开发</li>
+            </ul>
+        </div>
+
+        <div class="contact fade-in">
+            <h3>联系方式：</h3>
+            <p>微信号: <span style="color:#ff9800;">your_wechat_id</span></p>
+            <p>QQ号: <span style="color:#ff9800;">your_qq_id</span></p>
+
+            <h3>扫一扫二维码添加我：</h3>
+            <div class="qr-code">
+                <div>
+                    <img src="wechat-qr.png" alt="微信二维码">
+                    <p>微信</p>
+                </div>
+                <div>
+                    <img src="qq-qr.png" alt="QQ二维码">
+                    <p>QQ</p>
+                </div>
+            </div>
+
+            <button class="button" onclick="window.location.href='mailto:your-email@example.com'">联系我们</button>
+        </div>
+    </div>
+
 </body>
 </html>
-
